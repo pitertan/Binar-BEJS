@@ -1,5 +1,5 @@
 -- membuat database
-CREATE DATABASE nama_database;
+CREATE DATABASE manufaktur;
 
 -- menggunakan database yang dibuat
 USE nama_database;
@@ -77,7 +77,7 @@ SELECT * FROM Komponen_Pemasok WHERE id_pemasok = '323e4567-e89b-12d3-a456-42665
 UPDATE Produk SET kuantitas = 20 WHERE nama_produk = 'Produk Baru';
 
 -- Memperbarui data pada tabel Komponen:
-UPDATE Komponen SET deskripsi = 'Deskripsi komponen yang telah diperbarui.' WHERE nama_komponen
+UPDATE Komponen SET deskripsi = 'Deskripsi komponen yang telah diperbarui.' WHERE nama_komponen = 'Komponen Baru';
 
 -- Memperbarui data pada tabel Pemasok:
 UPDATE Pemasok SET alamat_pemasok = 'Alamat Pemasok yang telah diperbarui' WHERE nama_pemasok = 'Pemasok Baru';

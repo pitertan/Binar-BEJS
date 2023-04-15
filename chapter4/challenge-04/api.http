@@ -1,0 +1,94 @@
+GET http://localhost:8000/supplier HTTP/1.1
+
+###
+
+POST http://localhost:8000/supplier HTTP/1.1
+content-type: application/json
+
+{
+    "name": "piter",
+    "address": "legok permai"
+}
+
+###
+
+GET http://localhost:8000/supplier/a636121c-6a96-4928-a523-1603b29600d7 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/supplier/a636121c-6a96-4928-a523-1603b29600d7 HTTP/1.1
+content-type: application/json
+
+{
+    "supplier_name": "ateng",
+    "address": "legok permai"
+}
+
+###
+
+DELETE  http://localhost:8000/supplier/a636121c-6a96-4928-a523-1603b29600d7 HTTP/1.1
+
+###
+
+GET http://localhost:8000/component HTTP/1.1
+
+###
+
+POST http://localhost:8000/component HTTP/1.1
+content-type: application/json
+
+{
+    "component_name": "keyboard",
+    "description": "logitech"
+}
+
+###
+
+GET http://localhost:8000/component/9de763da-a0e8-4813-84af-62fc87cda949 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/component/9de763da-a0e8-4813-84af-62fc87cda949 HTTP/1.1
+content-type: application/json
+
+{
+    "component_name": "RAM",
+    "description": "128GB"
+}
+
+###
+
+DELETE http://localhost:8000/component/9de763da-a0e8-4813-84af-62fc87cda949 HTTP/1.1
+
+###
+
+GET http://localhost:8000/product HTTP/1.1
+
+###
+
+POST http://localhost:8000/product HTTP/1.1
+content-type: application/json
+
+{
+    "product_name": "PC",
+    "quantity": 5,
+    "component_id": "4169d255-c2e1-4167-8c80-e9d79ba95480"
+}
+
+###
+
+GET http://localhost:8000/product/2d1ae4a3-a6c0-4b29-96ac-2c69ec8552d8 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/product/2d1ae4a3-a6c0-4b29-96ac-2c69ec8552d8 HTTP/1.1
+content-type: application/json
+
+{
+    "product_name": "gamming PC",
+    "quantity": 5
+}
+
+###
+
+DELETE http://localhost:8000/product/2d1ae4a3-a6c0-4b29-96ac-2c69ec8552d8 HTTP/1.1

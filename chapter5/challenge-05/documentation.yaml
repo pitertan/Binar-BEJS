@@ -1,0 +1,594 @@
+openapi: 3.0.0
+x-stoplight:
+  id: 2z70y2h7ginzk
+info:
+  title: manufacture
+  version: '1.0'
+  contact:
+    name: Piter Tanuwijaya
+    email: pitertan0120@gmail.com
+servers:
+  - url: 'http://localhost:8000'
+paths:
+  /supplier:
+    get:
+      summary: Returns all suppliers
+      tags:
+        - supplier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        supplier_id:
+                          type: string
+                        supplier_name:
+                          type: string
+                        address:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      - supplier_id: 2998745b-73b6-4fed-92ca-ae2414339d67
+                        supplier_name: piter
+                        address: legok permai
+      operationId: get-supplier
+    post:
+      summary: Adds a new supplier
+      operationId: post-supplier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      supplier_id:
+                        type: string
+                      supplier_name:
+                        type: string
+                      address:
+                        type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      supplier_id: 2998745b-73b6-4fed-92ca-ae2414339d67
+                      supplier_name: piter
+                      address: legok permai
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                supplier_name:
+                  type: string
+                address:
+                  type: string
+              x-examples:
+                Example 1:
+                  supplier_name: piter
+                  address: legok permai
+      tags:
+        - supplier
+  '/supplier/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get supplier by id
+      tags:
+        - supplier
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      supplier_id:
+                        type: string
+                      supplier_name:
+                        type: string
+                      address:
+                        type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      supplier_id: 2998745b-73b6-4fed-92ca-ae2414339d67
+                      supplier_name: piter
+                      address: legok permai
+      operationId: get-supplier-id
+    put:
+      summary: update supplier by id
+      operationId: put-supplier-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: success
+                    data: 2998745b-73b6-4fed-92ca-ae2414339d67
+      tags:
+        - supplier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                supplier_name:
+                  type: string
+                address:
+                  type: string
+              x-examples:
+                Example 1:
+                  supplier_name: ateng
+                  address: legok permai
+    delete:
+      summary: delete supplier by id
+      operationId: delete-supplier-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    example: null
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: success
+                    data: null
+      tags:
+        - supplier
+  /component:
+    get:
+      summary: return all component
+      tags:
+        - component
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        component_id:
+                          type: string
+                        component_name:
+                          type: string
+                        description:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      - component_id: 002e8cbc-80d4-4e16-b4c4-6301fa3fe01d
+                        component_name: keyboard
+                        description: logitech
+      operationId: get-component
+    post:
+      summary: add new component
+      operationId: post-component
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      component_id:
+                        type: string
+                      component_name:
+                        type: string
+                      description:
+                        type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      component_id: 002e8cbc-80d4-4e16-b4c4-6301fa3fe01d
+                      component_name: keyboard
+                      description: logitech
+      tags:
+        - component
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                component_name:
+                  type: string
+                description:
+                  type: string
+              x-examples:
+                Example 1:
+                  component_name: keyboard
+                  description: logitech
+  '/component/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: get component by id
+      tags:
+        - component
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      component_id:
+                        type: string
+                      component_name:
+                        type: string
+                      description:
+                        type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      component_id: 002e8cbc-80d4-4e16-b4c4-6301fa3fe01d
+                      component_name: keyboard
+                      description: logitech
+      operationId: get-component-id
+    put:
+      summary: update component by id
+      operationId: put-component-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: success
+                    data: 002e8cbc-80d4-4e16-b4c4-6301fa3fe01d
+      tags:
+        - component
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                component_name:
+                  type: string
+                description:
+                  type: string
+              x-examples:
+                Example 1:
+                  component_name: RAM
+                  description: 128GB
+    delete:
+      summary: delete component by id
+      operationId: delete-component-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    example: null
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: success
+                    data: null
+      tags:
+        - component
+  /product:
+    get:
+      summary: return all product
+      tags:
+        - product
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        product_id:
+                          type: string
+                        product_name:
+                          type: string
+                        quantity:
+                          type: integer
+                        component:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              product_id:
+                                type: string
+                              component_id:
+                                type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      - product_id: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+                        product_name: PC
+                        quantity: 5
+                        component:
+                          - product_id: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+                            component_id: 4169d255-c2e1-4167-8c80-e9d79ba95480
+      operationId: get-product
+    post:
+      summary: add new product
+      operationId: post-product
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      product_id:
+                        type: string
+                      product_name:
+                        type: string
+                      quantity:
+                        type: integer
+                      component:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product_id:
+                              type: string
+                            component_id:
+                              type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      product_id: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+                      product_name: PC
+                      quantity: 5
+                      component:
+                        - product_id: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+                          component_id: 4169d255-c2e1-4167-8c80-e9d79ba95480
+      tags:
+        - product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_name:
+                  type: string
+                quantity:
+                  type: integer
+                component_id:
+                  type: string
+              x-examples:
+                Example 1:
+                  product_name: PC
+                  quantity: 5
+                  component_id: 4169d255-c2e1-4167-8c80-e9d79ba95480
+  '/product/{id}':
+    get:
+      summary: get product by id
+      tags:
+        - product
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      product_id:
+                        type: string
+                      product_name:
+                        type: string
+                      quantity:
+                        type: integer
+                      component:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            product_id:
+                              type: string
+                            component_id:
+                              type: string
+                x-examples:
+                  Example 1:
+                    message: success
+                    data:
+                      product_id: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+                      product_name: PC
+                      quantity: 5
+                      component:
+                        - product_id: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+                          component_id: 4169d255-c2e1-4167-8c80-e9d79ba95480
+      operationId: get-product-id)
+    put:
+      summary: update product by id
+      operationId: put-product-id)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: success
+                    data: 6bfa897c-ae9f-4f1a-8fd9-9898e1757c75
+      tags:
+        - product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_name:
+                  type: string
+                quantity:
+                  type: integer
+              x-examples:
+                Example 1:
+                  product_name: gamming PC
+                  quantity: 5
+    delete:
+      summary: delete product by id
+      operationId: delete-product-id)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    example: null
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: success
+                    data: null
+      tags:
+        - product
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+components:
+  schemas: {}
+tags:
+  - name: component
+  - name: product
+  - name: supplier

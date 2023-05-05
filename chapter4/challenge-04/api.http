@@ -12,11 +12,11 @@ content-type: application/json
 
 ###
 
-GET http://localhost:8000/supplier/a636121c-6a96-4928-a523-1603b29600d7 HTTP/1.1
+GET http://localhost:8000/supplier/2998745b-73b6-4fed-92ca-ae2414339d67 HTTP/1.1
 
 ###
 
-PUT http://localhost:8000/supplier/a636121c-6a96-4928-a523-1603b29600d7 HTTP/1.1
+PUT http://localhost:8000/supplier/2998745b-73b6-4fed-92ca-ae2414339d67 HTTP/1.1
 content-type: application/json
 
 {
@@ -26,7 +26,7 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:8000/supplier/a636121c-6a96-4928-a523-1603b29600d7 HTTP/1.1
+DELETE  http://localhost:8000/supplier/2998745b-73b6-4fed-92ca-ae2414339d67 HTTP/1.1
 
 ###
 
@@ -44,11 +44,11 @@ content-type: application/json
 
 ###
 
-GET http://localhost:8000/component/9de763da-a0e8-4813-84af-62fc87cda949 HTTP/1.1
+GET http://localhost:8000/component/002e8cbc-80d4-4e16-b4c4-6301fa3fe01d HTTP/1.1
 
 ###
 
-PUT http://localhost:8000/component/9de763da-a0e8-4813-84af-62fc87cda949 HTTP/1.1
+PUT http://localhost:8000/component/002e8cbc-80d4-4e16-b4c4-6301fa3fe01d HTTP/1.1
 content-type: application/json
 
 {
@@ -58,7 +58,7 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:8000/component/9de763da-a0e8-4813-84af-62fc87cda949 HTTP/1.1
+DELETE http://localhost:8000/component/002e8cbc-80d4-4e16-b4c4-6301fa3fe01d HTTP/1.1
 
 ###
 
@@ -77,11 +77,11 @@ content-type: application/json
 
 ###
 
-GET http://localhost:8000/product/2d1ae4a3-a6c0-4b29-96ac-2c69ec8552d8 HTTP/1.1
+GET http://localhost:8000/product/6bfa897c-ae9f-4f1a-8fd9-9898e1757c75 HTTP/1.1
 
 ###
 
-PUT http://localhost:8000/product/2d1ae4a3-a6c0-4b29-96ac-2c69ec8552d8 HTTP/1.1
+PUT http://localhost:8000/product/6bfa897c-ae9f-4f1a-8fd9-9898e1757c75 HTTP/1.1
 content-type: application/json
 
 {
@@ -91,4 +91,4 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:8000/product/2d1ae4a3-a6c0-4b29-96ac-2c69ec8552d8 HTTP/1.1
+DELETE http://localhost:8000/product/6bfa897c-ae9f-4f1a-8fd9-9898e1757c75 HTTP/1.1
